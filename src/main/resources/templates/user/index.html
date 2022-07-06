@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http;//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+
+    <p th:text="'Welcome '+ ${user.username}+ '!'" ></p>
+    <a th:href="@{/}">
+        Select your spa services here
+    </a>
+
+<!--    <h2 th:if="${error}">Try again!</h2>-->
+
+
+
+    <h2>All users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tr th:each="userOfAll : ${allUsers}">
+                <td th:text="${userOfAll.username}"></td>
+                <td th:text="${userOfAll.email}"></td>
+
+            </tr>
+        </table>
+
+
+</body>
+</html>
